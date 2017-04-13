@@ -10,6 +10,8 @@
 		124A9EAD1E9F9A85000E07E8 /* AssemblyLine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124A9EA31E9F9A84000E07E8 /* AssemblyLine.framework */; };
 		124A9EB21E9F9A85000E07E8 /* AssemblyLineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A9EB11E9F9A85000E07E8 /* AssemblyLineTests.swift */; };
 		124A9EB41E9F9A85000E07E8 /* AssemblyLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 124A9EA61E9F9A84000E07E8 /* AssemblyLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		124A9EBF1E9F9A8D000E07E8 /* Flowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A9EBD1E9F9A8D000E07E8 /* Flowable.swift */; };
+		124A9EC01E9F9A8D000E07E8 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A9EBE1E9F9A8D000E07E8 /* Line.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		124A9EAC1E9F9A85000E07E8 /* AssemblyLineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssemblyLineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		124A9EB11E9F9A85000E07E8 /* AssemblyLineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssemblyLineTests.swift; sourceTree = "<group>"; };
 		124A9EB31E9F9A85000E07E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		124A9EBD1E9F9A8D000E07E8 /* Flowable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flowable.swift; sourceTree = "<group>"; };
+		124A9EBE1E9F9A8D000E07E8 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				124A9EA61E9F9A84000E07E8 /* AssemblyLine.h */,
+				124A9EBD1E9F9A8D000E07E8 /* Flowable.swift */,
+				124A9EBE1E9F9A8D000E07E8 /* Line.swift */,
 				124A9EA71E9F9A84000E07E8 /* Info.plist */,
 			);
 			path = AssemblyLine;
@@ -149,6 +155,7 @@
 					124A9EA21E9F9A84000E07E8 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = 88ACA86N96;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					124A9EAB1E9F9A85000E07E8 = {
@@ -198,6 +205,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				124A9EBF1E9F9A8D000E07E8 /* Flowable.swift in Sources */,
+				124A9EC01E9F9A8D000E07E8 /* Line.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +333,7 @@
 		124A9EB81E9F9A85000E07E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 88ACA86N96;
@@ -336,6 +346,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = inc.stamp.AssemblyLine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +354,7 @@
 		124A9EB91E9F9A85000E07E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 88ACA86N96;
@@ -362,6 +374,7 @@
 		124A9EBB1E9F9A85000E07E8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 88ACA86N96;
 				INFOPLIST_FILE = AssemblyLineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +387,7 @@
 		124A9EBC1E9F9A85000E07E8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 88ACA86N96;
 				INFOPLIST_FILE = AssemblyLineTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

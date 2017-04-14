@@ -14,40 +14,94 @@ class AssemblyLineTests: QuickSpec {
     
     override func spec() {
         describe("ModelX Factory") {
-            
-            let assembly: Step<ModelX> = Step({ (product) -> ModelX in
-                print("assembly")
-                sleep(1)
-                return product
-            })
-            
-            describe("Step manufactring is not nil", {
-                expect(assembly.manufacturing).toNot(beNil())
-            })
-            
-
-            
-            let paint: Step<ModelX> = Step({ (product) -> ModelX in
-                print("paint")
-                sleep(1)
-                return product
-            })
-            
-            let line: Line<ModelX, ModelXPackage> = Line(workflow: [assembly, paint])
-            
-            (0..<10).forEach({ (index) in
-                let product: ModelX = ModelX()
-                line.generate(product)
-            })
-            
-            print(line)
-
-            it("Package") {
+            context("White ModelX assembly line", {
+                
+                let assembly: Step<ModelX> = Step({ (product) -> ModelX in
+                    product.isAssembled = true
+                    return product
+                })
+                
+                let paint: Step<ModelX> = Step({ (product) -> ModelX in
+                    product.color = .white
+                    return product
+                })
+                
+                it("Step manufactring is not nil") {
+                    expect(assembly.manufacturing).toNot(beNil())
+                }
+                
+                let line: Line<ModelX, ModelXPackage> = Line(workflow: [assembly, paint])
+                (0..<10).forEach({ (index) in
+                    let product: ModelX = ModelX()
+                    line.generate(product)
+                })
                 let package: ModelXPackage = line.packing(block: { (products) -> ModelXPackage in
                     return ModelXPackage(products: products)
                 })
-                expect(package.products.count).to(equal(10))
-            }
+                
+                it("Genrate 10 units") {
+                    expect(line.products.count).to(equal(10))
+                }
+                
+                it("Package") {
+                    expect(package.products.count).to(equal(10))
+                }
+                
+                it("ModelX is assembled") {
+                    package.products.forEach({ (modelX) in
+                        expect(modelX.isAssembled).to(equal(true))
+                    })
+                }
+                
+                it("ModelX is white color") {
+                    package.products.forEach({ (modelX) in
+                        expect(modelX.color!).to(equal(UIColor.white))
+                    })
+                }
+            })
+            
+            context("ModelX assembly bad line", {
+                
+                var count: Int = 0
+                
+                let badStep: Step<ModelX> = Step({ (product) -> ModelX in
+                    product.isAssembled = true
+                    if count % 2 == 0 {
+                        product.error = ModelXError.invalid
+                    }
+                    count += 1
+                    return product
+                })
+                
+                it("Step manufactring is not nil") {
+                    expect(badStep.manufacturing).toNot(beNil())
+                }
+                
+                let line: Line<ModelX, ModelXPackage> = Line(workflow: [badStep])
+                (0..<10).forEach({ (index) in
+                    let product: ModelX = ModelX()
+                    line.generate(product)
+                })
+                
+                let package: ModelXPackage = line.packing(block: { (products) -> ModelXPackage in
+                    return ModelXPackage(products: products)
+                })
+                
+                it("Genrate 5 units") {
+                    expect(line.products.count).to(equal(5))
+                }
+                
+                it("Package") {
+                    expect(package.products.count).to(equal(5))
+                }
+                
+                it("ModelX is assembled") {
+                    package.products.forEach({ (modelX) in
+                        expect(modelX.isAssembled).to(equal(true))
+                    })
+                }
+                
+            })
             
         }
     }

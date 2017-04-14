@@ -28,29 +28,49 @@ public class Line <Product: Processable, Package: Packageable> {
         self.queue = queue
     }
     
-    public func generate(_ product: Product) {
+    @discardableResult
+    public func generate(_ product: Product) -> Product {
         let workItem: DispatchWorkItem
         var product: Product = product
-        workItem = DispatchWorkItem {
-            self.workflow.forEach({ (step) in
+        let workflow: [Step<Product>] = self.workflow
+        workItem = DispatchWorkItem { [weak self] in
+            for step in workflow {
                 product = step.execute(product)
-            })
+                if let error: Error = product.error {
+                    product.dispose(error)
+                    self?.remove(product)
+                    break
+                }
+                if product.workItem!.isCancelled {
+                    product.dispose(nil)
+                    self?.remove(product)
+                    break
+                }
+            }
         }
         product.workItem = workItem
         self.products.append(product)
         self.queue.async(group: group, execute: workItem)
+        return product
+    }
+    
+    public func remove(_ product: Product) {
+        if let index: Int = self.products.index(of: product) {
+            self.products.remove(at: index)
+        }
     }
     
     public func stop() {
         self.products.forEach { (product) in
             product.workItem?.cancel()
         }
+        self.products.removeAll()
     }
     
     public func dispose() {
         self.stop()
         self.products.forEach { (product) in
-            product.dispose()
+            product.dispose(nil)
         }
     }
     

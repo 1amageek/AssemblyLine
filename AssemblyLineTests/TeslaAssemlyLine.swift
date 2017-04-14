@@ -15,20 +15,29 @@ enum ModelXStatus: StatusProtocol {
     case paint
 }
 
-struct ModelX: Processable {
+enum ModelXError: Error {
+    case invalid
+}
+
+class ModelX: Processable {
     
     typealias Status = ModelXStatus
     
+    var error: Error?
     var id: String
     var status: Status
     var workItem: DispatchWorkItem?
+    
+    var isAssembled: Bool = false
+    
+    var color: UIColor?
     
     init() {
         self.id = UUID().uuidString
         self.status = .spec        
     }
     
-    func dispose() {
+    func dispose(_ error: Error?) {
         
     }
     
@@ -37,37 +46,3 @@ struct ModelX: Processable {
 struct ModelXPackage: Packageable {
     var products: [ModelX]
 }
-
-//protocol ModelXProtocol: Flowable {
-//    typealias Input = ModelX
-//    typealias Output = ModelX
-//}
-//
-//struct Assembly: ModelXProtocol {
-//    
-//    var block: (ModelX) -> ModelX {
-//        return { modelX in
-//            return modelX
-//        }
-//    }
-//
-//    func execute(_ product: ModelX) -> ModelX {
-//        return self.block(product)
-//    }
-//}
-//
-//struct Paint: ModelXProtocol {
-//    
-//    var block: (ModelX) -> ModelX {
-//        return { modelX in
-//            return modelX
-//        }
-//    }
-//    
-//    func execute(_ product: ModelX) -> ModelX {
-//        return self.block(product)
-//    }
-//    
-//}
-
-

@@ -12,10 +12,11 @@ public protocol StatusProtocol { }
 
 public protocol Processable: Hashable {
     associatedtype Status: StatusProtocol
+    var error: Error? { get }
     var id: String { get }
     var status: Status { set get }
     var workItem: DispatchWorkItem? { set get }
-    func dispose()
+    func dispose(_ error: Error?)
 }
 
 extension Processable {

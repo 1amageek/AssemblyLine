@@ -44,6 +44,4 @@ public class Step<Product: Processable> {
     
 }
 
-public protocol Packageable {
-    
-}
+public protocol Packageable { }

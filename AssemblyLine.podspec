@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
 
   s.name         = "AssemblyLine"
   s.version      = "0.0.1"
-  s.summary      = "AssemblyLine is a library that simply wrote a workflow."
+  s.summary      = "AssemblyLine is a library for easily writing workflows."
   s.description  = <<-DESC
   AssemblyLine processes several tasks continuously in the background.
   Discard tasks that failed during execution during execution.
@@ -21,12 +21,11 @@ Pod::Spec.new do |s|
   s.license      = { :type => "MIT", :file => "https://github.com/1amageek/AssemblyLine/blob/master/LICENSE" }
   s.author             = { "1amageek" => "tmy0x3@icloud.com" }
   s.social_media_url   = "http://twitter.com/1amageek"
-  s.platform     = :ios, :macos, :tvos, :watchos
-
+  s.platform     = :ios#, :macos, :tvos, :watchos
   s.ios.deployment_target = "10.0"
-  s.osx.deployment_target = "10.10"
-  s.watchos.deployment_target = "2.0"
-  s.tvos.deployment_target = "9.0"
+  #s.osx.deployment_target = "10.10"
+  #s.watchos.deployment_target = "2.0"
+  #s.tvos.deployment_target = "9.0"
   s.source       = { :git => "https://github.com/1amageek/AssemblyLine.git", :tag => "#{s.version}" }
   s.source_files  = "AssemblyLine", "AssemblyLine/**/*.{swift}"
 

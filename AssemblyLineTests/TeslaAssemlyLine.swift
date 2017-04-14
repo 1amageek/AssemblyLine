@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 import AssemblyLine
 
 enum ModelXStatus: StatusProtocol {
@@ -27,9 +28,7 @@ class ModelX: Processable {
     var id: String
     var status: Status
     var workItem: DispatchWorkItem?
-    
     var isAssembled: Bool = false
-    
     var color: UIColor?
     
     init() {
@@ -40,7 +39,6 @@ class ModelX: Processable {
     func dispose(_ error: Error?) {
         
     }
-    
 }
 
 struct ModelXPackage: Packageable {

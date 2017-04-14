@@ -8,27 +8,27 @@
 
 import Foundation
 
-public class Line <Step: Flowable, Product: Processable, Package: Packageable> {
-    
+public class Line <Product: Processable, Package: Packageable> {
+
     public let id: String
     
     public let queue: DispatchQueue
     
     public let group: DispatchGroup = DispatchGroup()
     
-    public let workflow: [Step]
+    public let workflow: [Step<Product>]
     
     private(set) var products: [Product] = []
     
     init(id: String = UUID().uuidString,
-         workflow: [Step],
+         workflow: [Step<Product>],
          queue: DispatchQueue = DispatchQueue(label: "line.queue")) {
         self.id = id
         self.workflow = workflow
         self.queue = queue
     }
     
-    public func add(_ product: Product) {
+    public func generate(_ product: Product) {
         let workItem: DispatchWorkItem
         var product: Product = product
         workItem = DispatchWorkItem {
@@ -37,16 +37,18 @@ public class Line <Step: Flowable, Product: Processable, Package: Packageable> {
             })
         }
         product.workItem = workItem
+        self.products.append(product)
         self.queue.async(group: group, execute: workItem)
     }
     
     public func stop() {
         self.products.forEach { (product) in
-            product.workItem.cancel()
+            product.workItem?.cancel()
         }
     }
     
     public func dispose() {
+        self.stop()
         self.products.forEach { (product) in
             product.dispose()
         }
@@ -65,6 +67,6 @@ extension Line: Hashable {
     }
 }
 
-public func == <Step: Flowable, Product: Processable, Package: Packageable>(lhs: Line<Step, Product, Package>, rhs: Line<Step, Product, Package>) -> Bool {
+public func == <Product: Processable, Package: Packageable>(lhs: Line<Product, Package>, rhs: Line<Product, Package>) -> Bool {
     return lhs.id == rhs.id
 }

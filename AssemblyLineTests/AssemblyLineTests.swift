@@ -6,30 +6,49 @@
 //  Copyright © 2017年 Stamp Inc. All rights reserved.
 //
 
-import XCTest
+import Quick
+import Nimble
 @testable import AssemblyLine
 
-class AssemblyLineTests: XCTestCase {
+class AssemblyLineTests: QuickSpec {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    override func spec() {
+        describe("ModelX Factory") {
+            
+            let assembly: Step<ModelX> = Step({ (product) -> ModelX in
+                print("assembly")
+                sleep(1)
+                return product
+            })
+            
+            describe("Step manufactring is not nil", {
+                expect(assembly.manufacturing).toNot(beNil())
+            })
+            
+
+            
+            let paint: Step<ModelX> = Step({ (product) -> ModelX in
+                print("paint")
+                sleep(1)
+                return product
+            })
+            
+            let line: Line<ModelX, ModelXPackage> = Line(workflow: [assembly, paint])
+            
+            (0..<10).forEach({ (index) in
+                let product: ModelX = ModelX()
+                line.generate(product)
+            })
+            
+            print(line)
+
+            it("Package") {
+                let package: ModelXPackage = line.packing(block: { (products) -> ModelXPackage in
+                    return ModelXPackage(products: products)
+                })
+                expect(package.products.count).to(equal(10))
+            }
+            
         }
     }
     

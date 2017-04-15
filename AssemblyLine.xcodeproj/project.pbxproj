@@ -13,7 +13,15 @@
 		124A9EBF1E9F9A8D000E07E8 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A9EBD1E9F9A8D000E07E8 /* Assembly.swift */; };
 		124A9EC01E9F9A8D000E07E8 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A9EBE1E9F9A8D000E07E8 /* Line.swift */; };
 		124A9EC21E9F9C26000E07E8 /* TeslaAssemlyLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A9EC11E9F9C26000E07E8 /* TeslaAssemlyLine.swift */; };
-		124A9EC71EA0CAD7000E07E8 /* AssemblyLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 124A9EC61EA0CAD7000E07E8 /* AssemblyLine.h */; };
+		129412421EA24B340067A919 /* AssemblyLine.h in Headers */ = {isa = PBXBuildFile; fileRef = 129412411EA24B340067A919 /* AssemblyLine.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1294124A1EA251450067A919 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 129412491EA251450067A919 /* AppDelegate.swift */; };
+		1294124C1EA251450067A919 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1294124B1EA251450067A919 /* ViewController.swift */; };
+		1294124F1EA251450067A919 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1294124D1EA251450067A919 /* Main.storyboard */; };
+		129412511EA251450067A919 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 129412501EA251450067A919 /* Assets.xcassets */; };
+		129412541EA251450067A919 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 129412521EA251450067A919 /* LaunchScreen.storyboard */; };
+		129412591EA256BE0067A919 /* TeslaAssemlyLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A9EC11E9F9C26000E07E8 /* TeslaAssemlyLine.swift */; };
+		1294125A1EA258830067A919 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A9EBD1E9F9A8D000E07E8 /* Assembly.swift */; };
+		1294125B1EA258830067A919 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124A9EBE1E9F9A8D000E07E8 /* Line.swift */; };
 		F0E89C96FC3B128A38E116CE /* Pods_AssemblyLineTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FECF91DF84A64E6F35CD9A /* Pods_AssemblyLineTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +45,14 @@
 		124A9EBD1E9F9A8D000E07E8 /* Assembly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		124A9EBE1E9F9A8D000E07E8 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		124A9EC11E9F9C26000E07E8 /* TeslaAssemlyLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeslaAssemlyLine.swift; sourceTree = "<group>"; };
-		124A9EC61EA0CAD7000E07E8 /* AssemblyLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssemblyLine.h; sourceTree = "<group>"; };
+		129412411EA24B340067A919 /* AssemblyLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssemblyLine.h; sourceTree = "<group>"; };
+		129412471EA251450067A919 /* TeslaFactory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeslaFactory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		129412491EA251450067A919 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1294124B1EA251450067A919 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1294124E1EA251450067A919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		129412501EA251450067A919 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		129412531EA251450067A919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		129412551EA251450067A919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E26F08ED4FF96B140C0CBEA /* Pods-AssemblyLineTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssemblyLineTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AssemblyLineTests/Pods-AssemblyLineTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2DA95F0A117989B7F812754B /* Pods-AssemblyLine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AssemblyLine.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AssemblyLine/Pods-AssemblyLine.debug.xcconfig"; sourceTree = "<group>"; };
 		66F27657212C446717A8E930 /* Pods_AssemblyLine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AssemblyLine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +78,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		129412441EA251450067A919 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -82,6 +104,7 @@
 			children = (
 				124A9EA51E9F9A84000E07E8 /* AssemblyLine */,
 				124A9EB01E9F9A85000E07E8 /* AssemblyLineTests */,
+				129412481EA251450067A919 /* TeslaFactory */,
 				124A9EA41E9F9A84000E07E8 /* Products */,
 				05BA0ED610D07620A5998F38 /* Pods */,
 				A5AA7D194069FF53E5E6C1AB /* Frameworks */,
@@ -93,6 +116,7 @@
 			children = (
 				124A9EA31E9F9A84000E07E8 /* AssemblyLine.framework */,
 				124A9EAC1E9F9A85000E07E8 /* AssemblyLineTests.xctest */,
+				129412471EA251450067A919 /* TeslaFactory.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,7 +124,7 @@
 		124A9EA51E9F9A84000E07E8 /* AssemblyLine */ = {
 			isa = PBXGroup;
 			children = (
-				124A9EC61EA0CAD7000E07E8 /* AssemblyLine.h */,
+				129412411EA24B340067A919 /* AssemblyLine.h */,
 				124A9EBD1E9F9A8D000E07E8 /* Assembly.swift */,
 				124A9EBE1E9F9A8D000E07E8 /* Line.swift */,
 				124A9EA71E9F9A84000E07E8 /* Info.plist */,
@@ -116,6 +140,19 @@
 				124A9EB31E9F9A85000E07E8 /* Info.plist */,
 			);
 			path = AssemblyLineTests;
+			sourceTree = "<group>";
+		};
+		129412481EA251450067A919 /* TeslaFactory */ = {
+			isa = PBXGroup;
+			children = (
+				129412491EA251450067A919 /* AppDelegate.swift */,
+				1294124B1EA251450067A919 /* ViewController.swift */,
+				1294124D1EA251450067A919 /* Main.storyboard */,
+				129412501EA251450067A919 /* Assets.xcassets */,
+				129412521EA251450067A919 /* LaunchScreen.storyboard */,
+				129412551EA251450067A919 /* Info.plist */,
+			);
+			path = TeslaFactory;
 			sourceTree = "<group>";
 		};
 		A5AA7D194069FF53E5E6C1AB /* Frameworks */ = {
@@ -134,7 +171,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				124A9EC71EA0CAD7000E07E8 /* AssemblyLine.h in Headers */,
+				129412421EA24B340067A919 /* AssemblyLine.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +219,23 @@
 			productReference = 124A9EAC1E9F9A85000E07E8 /* AssemblyLineTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		129412461EA251450067A919 /* TeslaFactory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 129412561EA251450067A919 /* Build configuration list for PBXNativeTarget "TeslaFactory" */;
+			buildPhases = (
+				129412431EA251450067A919 /* Sources */,
+				129412441EA251450067A919 /* Frameworks */,
+				129412451EA251450067A919 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TeslaFactory;
+			productName = TeslaFactory;
+			productReference = 129412471EA251450067A919 /* TeslaFactory.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -203,6 +257,11 @@
 						DevelopmentTeam = 88ACA86N96;
 						ProvisioningStyle = Automatic;
 					};
+					129412461EA251450067A919 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 88ACA86N96;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 124A9E9D1E9F9A84000E07E8 /* Build configuration list for PBXProject "AssemblyLine" */;
@@ -211,6 +270,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 124A9E991E9F9A84000E07E8;
 			productRefGroup = 124A9EA41E9F9A84000E07E8 /* Products */;
@@ -219,6 +279,7 @@
 			targets = (
 				124A9EA21E9F9A84000E07E8 /* AssemblyLine */,
 				124A9EAB1E9F9A85000E07E8 /* AssemblyLineTests */,
+				129412461EA251450067A919 /* TeslaFactory */,
 			);
 		};
 /* End PBXProject section */
@@ -235,6 +296,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		129412451EA251450067A919 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				129412541EA251450067A919 /* LaunchScreen.storyboard in Resources */,
+				129412511EA251450067A919 /* Assets.xcassets in Resources */,
+				1294124F1EA251450067A919 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +408,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		129412431EA251450067A919 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				129412591EA256BE0067A919 /* TeslaAssemlyLine.swift in Sources */,
+				1294125A1EA258830067A919 /* Assembly.swift in Sources */,
+				1294124C1EA251450067A919 /* ViewController.swift in Sources */,
+				1294124A1EA251450067A919 /* AppDelegate.swift in Sources */,
+				1294125B1EA258830067A919 /* Line.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -346,6 +429,25 @@
 			targetProxy = 124A9EAE1E9F9A85000E07E8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1294124D1EA251450067A919 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1294124E1EA251450067A919 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		129412521EA251450067A919 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				129412531EA251450067A919 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		124A9EB51E9F9A85000E07E8 /* Debug */ = {
@@ -520,6 +622,32 @@
 			};
 			name = Release;
 		};
+		129412571EA251450067A919 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 88ACA86N96;
+				INFOPLIST_FILE = TeslaFactory/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = inc.stamp.TeslaFactory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		129412581EA251450067A919 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 88ACA86N96;
+				INFOPLIST_FILE = TeslaFactory/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = inc.stamp.TeslaFactory;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -549,6 +677,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		129412561EA251450067A919 /* Build configuration list for PBXNativeTarget "TeslaFactory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				129412571EA251450067A919 /* Debug */,
+				129412581EA251450067A919 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

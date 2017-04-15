@@ -35,29 +35,34 @@ class AssemblyLineTests: QuickSpec {
                     let product: ModelX = ModelX()
                     line.generate(product)
                 })
-                let package: ModelXPackage = line.packing(block: { (products) -> ModelXPackage in
-                    return ModelXPackage(products: products)
+                
+                waitUntil(action: { (done) in
+                    line.packing { (products, isStopped) in
+                        let package = ModelXPackage(products: products)
+                        it("Genrate 10 units") {
+                            expect(line.products.count).to(equal(10))
+                        }
+                        
+                        it("Package") {
+                            expect(package.products.count).to(equal(10))
+                        }
+                        
+                        it("ModelX is assembled") {
+                            package.products.forEach({ (modelX) in
+                                expect(modelX.isAssembled).to(equal(true))
+                            })
+                        }
+                        
+                        it("ModelX is white color") {
+                            package.products.forEach({ (modelX) in
+                                expect(modelX.color!).to(equal(UIColor.white))
+                            })
+                        }
+                        
+                        done()
+                    }
                 })
-                
-                it("Genrate 10 units") {
-                    expect(line.products.count).to(equal(10))
-                }
-                
-                it("Package") {
-                    expect(package.products.count).to(equal(10))
-                }
-                
-                it("ModelX is assembled") {
-                    package.products.forEach({ (modelX) in
-                        expect(modelX.isAssembled).to(equal(true))
-                    })
-                }
-                
-                it("ModelX is white color") {
-                    package.products.forEach({ (modelX) in
-                        expect(modelX.color!).to(equal(UIColor.white))
-                    })
-                }
+
             })
             
             context("ModelX assembly bad line", {
@@ -83,23 +88,26 @@ class AssemblyLineTests: QuickSpec {
                     line.generate(product)
                 })
                 
-                let package: ModelXPackage = line.packing(block: { (products) -> ModelXPackage in
-                    return ModelXPackage(products: products)
+                waitUntil(action: { (done) in
+                    line.packing { (products, isStopped) in
+                        let package = ModelXPackage(products: products)
+                        
+                        it("Genrate 5 units") {
+                            expect(line.products.count).to(equal(5))
+                        }
+                        
+                        it("Package") {
+                            expect(package.products.count).to(equal(5))
+                        }
+                        
+                        it("ModelX is assembled") {
+                            package.products.forEach({ (modelX) in
+                                expect(modelX.isAssembled).to(equal(true))
+                            })
+                        }
+                        done()
+                    }
                 })
-                
-                it("Genrate 5 units") {
-                    expect(line.products.count).to(equal(5))
-                }
-                
-                it("Package") {
-                    expect(package.products.count).to(equal(5))
-                }
-                
-                it("ModelX is assembled") {
-                    package.products.forEach({ (modelX) in
-                        expect(modelX.isAssembled).to(equal(true))
-                    })
-                }
                 
             })
             

@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>TeslaFactory.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>5</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>124A9EAB1E9F9A85000E07E8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>129412461EA251450067A919</key>
 		<dict>
 			<key>primary</key>
 			<true/>

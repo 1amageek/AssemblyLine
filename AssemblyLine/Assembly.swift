@@ -29,16 +29,13 @@ public func == <T: Processable>(lhs: T, rhs: T) -> Bool {
 
 public class Step<Product: Processable> {
     
-    typealias Input = Product
-    typealias Output = Product
-    
-    var manufacturing: (Input) -> Output
+    var manufacturing: (Product) -> Product
 
-    init(_ manufacturing: @escaping (Input) -> Output) {
+    init(_ manufacturing: @escaping (Product) -> Product) {
         self.manufacturing = manufacturing
     }
     
-    func execute(_ input: Input) -> Output {
+    func execute(_ input: Product) -> Product {
         return manufacturing(input)
     }
     

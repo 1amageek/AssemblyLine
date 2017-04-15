@@ -18,9 +18,11 @@ public class Line <Product: Processable, Package: Packageable> {
     
     public let workflow: [Step<Product>]
     
+    private var isStopped: Bool = false
+    
     private(set) var products: [Product] = []
     
-    init(id: String = UUID().uuidString,
+    public init(id: String = UUID().uuidString,
          workflow: [Step<Product>],
          queue: DispatchQueue = DispatchQueue(label: "line.queue")) {
         self.id = id
@@ -61,6 +63,7 @@ public class Line <Product: Processable, Package: Packageable> {
     }
     
     public func stop() {
+        self.isStopped = true
         self.products.forEach { (product) in
             product.workItem?.cancel()
         }
@@ -74,9 +77,18 @@ public class Line <Product: Processable, Package: Packageable> {
         }
     }
     
-    public func packing(block: ([Product]) -> Package) -> Package {
-        _ = self.group.wait(timeout: .distantFuture)
-        return block(self.products)
+    public func packing(block: @escaping ([Product], Bool) -> Void) {
+        if isStopped {
+            block([], self.isStopped)
+            return
+        }
+        let queue: DispatchQueue = DispatchQueue(label: "line.package.queue")
+        queue.async {
+            _ = self.group.wait(timeout: .distantFuture)
+            DispatchQueue.main.async {
+                block(self.products, self.isStopped)
+            }
+        }
     }
     
 }

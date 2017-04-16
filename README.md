@@ -84,7 +84,11 @@ let line: Line<ModelX, ModelXPackage> = Line(workflow: [assembly, paint])
 })
 
 // Packaging
-let package: ModelXPackage = line.packing(block: { (products) -> ModelXPackage in
-    return ModelXPackage(products: products)
-})
+line.packing { (products, isStopped) in    
+    if isStopped {
+        print("Line is stopped")
+        return
+    }
+    let package = ModelXPackage(products: products)
+}
 ```

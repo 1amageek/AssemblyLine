@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "AssemblyLine"
-  s.version      = "0.0.1"
+  s.version      = "0.1.1"
   s.summary      = "AssemblyLine is a library for easily writing workflows."
   s.description  = <<-DESC
   AssemblyLine processes several tasks continuously in the background.

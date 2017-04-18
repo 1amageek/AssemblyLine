@@ -10,7 +10,7 @@ import Foundation
 
 public protocol StatusProtocol { }
 
-public protocol Processable: Hashable {
+public protocol Processable: class, Hashable {
     associatedtype Status: StatusProtocol
     var error: Error? { get }
     var id: String { get }
@@ -29,16 +29,19 @@ public func == <T: Processable>(lhs: T, rhs: T) -> Bool {
 
 public class Step<Product: Processable> {
     
-    var manufacturing: (Product) -> Product
+    public typealias Input = Product
+    public typealias Output = Product
+    
+    public var manufacturing: (Input) -> Output
 
-    init(_ manufacturing: @escaping (Product) -> Product) {
+    public init(_ manufacturing: @escaping (Input) -> Output) {
         self.manufacturing = manufacturing
     }
     
-    func execute(_ input: Product) -> Product {
+    public func execute(_ input: Input) -> Output {
         return manufacturing(input)
     }
-    
+
 }
 
 public protocol Packageable { }

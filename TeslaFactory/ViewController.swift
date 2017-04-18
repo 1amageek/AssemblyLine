@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AssemblyLine
 
 class ViewController: UIViewController {
 
@@ -14,8 +15,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         let assembly: Step<ModelX> = Step({ (product) -> ModelX in
             product.isAssembled = true
-            print("Assembly")
-            sleep(1)
             return product
         })
         

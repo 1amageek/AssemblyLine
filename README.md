@@ -22,6 +22,8 @@ Processing of data does not always succeed in all. Because mobile has an unstabl
 
 It is necessary to have a method to make each processing independent and to process it simple.
 
+<img src="https://github.com/1amageek/AssemblyLine/blob/master/proccess_flow.png">
+
 ## Usage 👻
 
 Take example of Tesla's factory.

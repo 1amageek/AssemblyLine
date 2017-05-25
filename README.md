@@ -12,7 +12,7 @@ Discard tasks that failed during execution during execution.
 
 Processing flow of data becomes complicated year by year.
 Until a few years ago I just took a picture and uploaded it.
-Recently, it passes through multiple flow, processing photos and processing meta information as face recognition.
+Recently, it passes through multiple flow, processing photos and processing meta information, face recognition.
 
 Processing of data does not always succeed in all. Because mobile has an unstable factor.
 

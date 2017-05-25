@@ -8,6 +8,20 @@
 AssemblyLine processes several tasks continuously in the background.
 Discard tasks that failed during execution during execution.
 
+## Why
+
+Processing flow of data becomes complicated year by year.
+Until a few years ago I just took a picture and uploaded it.
+Recently, it passes through multiple flow, processing photos and processing meta information as face recognition.
+
+Processing of data does not always succeed in all. Because mobile has an unstable factor.
+
+1. Network disconnection
+1. Insufficient memory
+1. Insufficient storage
+
+It is necessary to have a method to make each processing independent and to process it simple.
+
 ## Usage 👻
 
 Take example of Tesla's factory.
